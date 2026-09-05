@@ -9,8 +9,8 @@ while True:
     prompt = input("Enter prompt [q to quit] :")
     if prompt.lower() == 'q':
         break 
-    response = model.invoke( [SystemMessage(content="Give one line answers") ,
-                              HumanMessage(content= prompt)])
+    response = model.invoke( [SystemMessage(content = "Give one line answer") ,
+                              HumanMessage(content = prompt)])
     print(response.content)
     print('-' * 50)
     print(f'Total Tokens : {response.usage_metadata["total_tokens"]}')
