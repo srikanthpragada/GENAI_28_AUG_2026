@@ -1,4 +1,4 @@
-# Set environment variable - HUGGINGFACE_HUB_TOKEN - to access token
+# Set environment variable - HUGGINGFACEHUB_API_TOKEN - to access token
 
 from langchain_huggingface import (
     HuggingFaceEndpoint,
