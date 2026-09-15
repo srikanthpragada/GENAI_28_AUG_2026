@@ -1,13 +1,13 @@
+# Create environment variable - HUGGINGFACEHUB_API_TOKEN
+
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 from langchain_huggingface import HuggingFaceEndpointEmbeddings
-import keys 
 
 # 1. Access Embedding Model
 embeddings_model = HuggingFaceEndpointEmbeddings(
-    model="sentence-transformers/all-MiniLM-L6-v2",
-    #huggingfacehub_api_token= keys.HUGGINGFACEKEY
+    model="sentence-transformers/all-MiniLM-L6-v2"
 )
 
 from langchain_community.vectorstores import FAISS
@@ -16,7 +16,7 @@ from langchain_core.documents import Document
 
 # 2. Sample Data 
 documents = [
-    Document(page_content="LangChain is a framework."),
+    Document(page_content="Liverpool is winning a lot of matches"),
     Document(page_content="Ollama allows running LLMs locally."),
     Document(page_content="Manchester City is doing awesome!"),
     Document(page_content="Bill Gates Founded Microsoft"),

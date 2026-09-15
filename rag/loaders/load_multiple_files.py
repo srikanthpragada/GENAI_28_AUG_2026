@@ -4,18 +4,19 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 from langchain_community.document_loaders.pdf import PyPDFLoader
 from langchain_community.document_loaders.directory import DirectoryLoader
+from langchain_community.document_loaders.text import TextLoader
 
 # Load the text file from the given directory
-loader = DirectoryLoader("./docs", glob=["*.pdf"],
+pdf_loader = DirectoryLoader("./docs", glob=["*.pdf"],
                          loader_cls=PyPDFLoader,
                          loader_kwargs= {"mode" : "single"})
 
-# Load the documents
-docs = loader.load()
+# Load the text file from the given directory
+text_loader = DirectoryLoader("./docs", glob=["*.txt"],
+                         loader_cls=TextLoader,
+                       )
+
+# Loading docs from both 
+docs = pdf_loader.load() + text_loader.load() 
 print("Loaded Documents :", len(docs))
 
-# Print the loaded documents
-for doc in docs:
-    # Print the first 50 characters of each document
-    print(doc.page_content[:50])
-    print("-" * 50)
