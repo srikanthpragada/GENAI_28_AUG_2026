@@ -31,7 +31,7 @@ tools = [search]
 
 agent = create_agent(model, tools)
 
-human_message = HumanMessage("Get me prices of all mouse")
+human_message = HumanMessage("Get me prices in original currency of all mouse products")
 
 # Invoke agent
 response = agent.invoke({"messages": [human_message]})
