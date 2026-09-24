@@ -23,8 +23,8 @@ async def process():
 
         print('-' * 50)
         
-        model = init_chat_model("gpt-5-nano", model_provider="openai")
-        #model = init_chat_model("gemini-2.5-flash", model_provider="google_genai")
+        #model = init_chat_model("gpt-5-nano", model_provider="openai")
+        model = init_chat_model("gemini-3.5-flash", model_provider="google_genai")
         agent = create_agent(model, tools)
         response = await agent.ainvoke({"messages": "Who won IPL 2026? Just give team name."})
 

@@ -27,19 +27,19 @@ async def process():
     agent = create_agent(model, tools)
 
 
-    # human_message = HumanMessage("is 383843 a prime number?")
-    # response = await agent.ainvoke({"messages": [human_message] })
+    human_message = HumanMessage("is 383843 a prime number?")
+    response = await agent.ainvoke({"messages": [human_message] })
     
-    # for message in response['messages']:
-    #     message.pretty_print()
+    for message in response['messages']:
+        message.pretty_print()
 
   
-    human_message = HumanMessage("Get contents of test.txt file")
-    file_response = await agent.ainvoke({"messages": [human_message]})
+    # human_message = HumanMessage("Get contents of test.txt file")
+    # file_response = await agent.ainvoke({"messages": [human_message]})
     #print(file_response["messages"][-1].content)
     
-    for msg in file_response['messages']:
-        msg.pretty_print()
+    # for msg in file_response['messages']:
+    #     msg.pretty_print()
 
 
 asyncio.run(process())
